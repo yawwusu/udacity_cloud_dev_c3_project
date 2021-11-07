@@ -15,7 +15,7 @@ spec:
         service: reverseproxy
     spec:
       containers:
-      - image: 9414318/udagram-reverseproxy:v2
+      - image: 9414318/udagram-reverseproxy:v5
         name: reverseproxy
         imagePullPolicy: Always          
         resources:
@@ -28,3 +28,17 @@ spec:
         ports:
         - containerPort: 8080
       restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: reverseproxy
+  name: reverseproxy
+spec:
+  ports:
+  - name: "8080"
+    port: 8080
+    targetPort: 8080
+  selector:
+    service: reverseproxy

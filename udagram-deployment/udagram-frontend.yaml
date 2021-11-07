@@ -15,8 +15,22 @@ spec:
         app: frontend
     spec:
       containers:
-      - name: udagram-frontend
-        image: 9414318/udagram-frontend:v2
+      - name: frontend
+        image: 9414318/udagram-frontend:v5
         ports:
         - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  labels:
+    run: frontend
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    run: frontend
+
 

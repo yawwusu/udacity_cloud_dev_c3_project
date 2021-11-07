@@ -1,0 +1,16 @@
+apiVersion: v1
+data:
+  POSTGRES_HOST: yaw-udagram-microservice-dev.c2dcpludw9i0.us-east-1.rds.amazonaws.com
+  POSTGRES_DB: yaw_udagram_ms
+  AWS_BUCKET: yaw-udagram-microservices-dev
+  AWS_REGION: us-east-1
+  AWS_PROFILE: default
+  JWT_SECRET: hellothere222
+  URL: http://ad11625b1220341b48c9b7f69336a666-1180215646.us-east-1.elb.amazonaws.com:8100
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2021-11-05T21:16:11Z"
+  name: env-configmap
+  namespace: default
+  resourceVersion: "37080"
+  uid: e7b6fbda-b500-489c-bf83-f1eebdf5dbeb
